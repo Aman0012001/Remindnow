@@ -1,0 +1,1 @@
+<?php /**PATH /home/zaz/web/zaz.dev.obdemo.com/public_html/resources/views/admin/elements/quick_links.blade.php ENDPATH**/ ?>
