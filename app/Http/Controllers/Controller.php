@@ -253,4 +253,108 @@ class Controller
         $ext = strtolower($ext);
         return $ext;
     }
+
+    function getFirebaseAccessToken() {
+    $keyFilePath = public_path('remyndnow-8ce2fb96e90f.json');
+    if (!file_exists($keyFilePath)) {
+        throw new Exception('Service account file not found');
+    }
+
+    $key = json_decode(file_get_contents($keyFilePath), true);
+
+    $header = [
+        'alg' => 'RS256',
+        'typ' => 'JWT'
+    ];
+
+    $now = time();
+    $payload = [
+        'iss' => $key['client_email'],
+        'scope' => 'https://www.googleapis.com/auth/firebase.messaging',
+        'aud' => 'https://oauth2.googleapis.com/token',
+        'iat' => $now,
+        'exp' => $now + 3600,
+    ];
+
+    $base64UrlHeader = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode(json_encode($header)));
+    $base64UrlPayload = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode(json_encode($payload)));
+
+    $signature = '';
+    openssl_sign("$base64UrlHeader.$base64UrlPayload", $signature, $key['private_key'], 'sha256');
+
+    $base64UrlSignature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
+
+    $jwt = "$base64UrlHeader.$base64UrlPayload.$base64UrlSignature";
+
+    $postData = http_build_query([
+        'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+        'assertion' => $jwt,
+    ]);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://oauth2.googleapis.com/token');
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
+
+    $response = curl_exec($ch);
+    if (curl_errno($ch)) {
+        throw new Exception('Curl error: ' . curl_error($ch));
+    }
+
+    curl_close($ch);
+
+    $jsonResponse = json_decode($response, true);
+
+    if (isset($jsonResponse['error'])) {
+        throw new Exception('Error fetching access token: ' . $jsonResponse['error']);
+    }
+
+    return $jsonResponse['access_token'];
+}
+
+public function send_push_notification($deviceToken = "", $device_type = "", $message = "", $notification_title = "", $notification_type = "", $data = [])
+{
+    $notification = [
+        "notification" => [
+            "title" => $notification_title,
+            "body" => $message,
+        ],
+        "token" => $deviceToken,
+    ];
+
+    if (!empty($data)) {
+        $notification["data"] = array_map('strval', $data); 
+        $notification["data"]["type"] = $notification_type; 
+    }
+
+    $body = json_encode(["message" => $notification]);
+
+    $baerer_token = $this->getFirebaseAccessToken();
+
+    $headers = [
+        'Authorization: Bearer ' . $baerer_token,
+        'Content-Type: application/json',
+        'Accept: application/json',
+    ];
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/v1/projects/remyndnow/messages:send');
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    $file = fopen("pushnotifications.txt", "a+");
+    fwrite($file, "\n\nRequest:\n" . $body . "\n\nResponse:\n" . $result . "\n\n");
+    fclose($file);
+
+    return ["response" => $result, "request" => $body];
+}
+
+
 }

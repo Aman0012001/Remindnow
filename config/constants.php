@@ -12,11 +12,24 @@ return [
 	"IMAGE_PATH"							=>	$WEBSITE_URL.'img/',
 	"IMAGE_ROOT_PATH"						=>	"img/",
 
-	"LANGUAGE_IMAGE_PATH"					=>	$WEBSITE_URL.'uploads/language_image/',
-	"LANGUAGE_IMAGE_ROOT_PATH"				=>	"uploads/language_image/",
+	"LANGUAGE_IMAGE_PATH"					=>	$WEBSITE_URL.'/public/uploads/language_image/',
+	"LANGUAGE_IMAGE_ROOT_PATH"				=>	"public/uploads/language_image/",
+
+	'STATE' => [
+    'STATE_TITLE' => "State",
+    'STATE_TITLES' => "States",
+],
 
 	"USER_IMAGE_PATH"						=>	$WEBSITE_URL.'uploads/User-image/',
 	"USER_IMAGE_ROOT_PATH"					=>	"uploads/User-image/",
+	
+	"FESTIVAL_IMAGE_PATH"						=>	$WEBSITE_URL.'uploads/Festival-image/',
+	"FESTIVAL_IMAGE_ROOT_PATH"					=>	"uploads/Festival-image/",
+
+	
+	
+	"TEMPLE_IMAGE_PATH"						=>	$WEBSITE_URL.'uploads/Temple-image/',
+	"TEMPLE_IMAGE_ROOT_PATH"					=>	"uploads/Temple-image/",
 
 	"SEO_PAGE_IMAGE_IMAGE_PATH"		 		=>	$WEBSITE_URL.'uploads/sep-image/',
 	"SEO_PAGE_IMAGE_ROOT_PATH"				=>	"uploads/sep-image/",
@@ -38,6 +51,27 @@ return [
 	'CUSTOMER' => [
 		'CUSTOMERS_TITLE' 	=> "Customer",
 		'CUSTOMERS_TITLES' 	=> "Customers",
+	],
+	
+	'TEMPLE' => [
+		'TEMPLE_TITLE' 	=> "Temple",
+		'TEMPLE_TITLES' 	=> "Temple",
+	],
+
+	'TIPTAP' => [
+    'TIPTAP_TITLE' => "Tiptap",
+    'TIPTAP_TITLES' => "Tiptaps",
+],
+
+'TIPTAP_IMAGE_PATH' => $WEBSITE_URL . 'uploads/Tiptap-image/',
+'TIPTAP_IMAGE_ROOT_PATH' => "uploads/Tiptap-image/",
+
+'NOTIFICATION_IMAGE_PATH' => $WEBSITE_URL . 'uploads/notifications/',
+'NOTIFICATION_IMAGE_ROOT_PATH' => "uploads/notifications/",
+	
+	'FESTIVAL' => [
+		'FESTIVAL_TITLE' 	=> "Festival",
+		'FESTIVAL_TITLES' 	=> "Festivals",
 	],
 
 	'SEO' => [

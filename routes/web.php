@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\frontend\FrontendController;
+use App\Http\Controllers\adminpnlx\FaqController;
+use App\Http\Controllers\adminpnlx\UserNotificationController;
 
 Route::any('/', [App\Http\Controllers\frontend\FrontendController::class, 'index']);
 
@@ -13,6 +15,25 @@ Route::prefix('adminpnlx')->group(function () {
     Route::match(['get', 'post'], 'save_password', [App\Http\Controllers\adminpnlx\LoginController::class, 'save_password'])->name('save_password');
 
     Route::middleware(['AuthAdmin'])->group(function () {
+        Route::post('festivals/mark-popular', [App\Http\Controllers\adminpnlx\FestivalController::class, 'markPopular'])->name('festivals.markPopular');
+         Route::resource('tiptaps', App\Http\Controllers\adminpnlx\TiptapController::class);
+Route::get('tiptaps/delete/{id}', [App\Http\Controllers\adminpnlx\TiptapController::class, 'destroy'])->name('tiptaps.delete');
+Route::get('tiptaps/change-status/{id}', [App\Http\Controllers\adminpnlx\TiptapController::class, 'changeStatus'])->name('tiptaps.changeStatus');
+Route::get('user-notifications/getUserDeviceIds', [UserNotificationController::class, 'getUserDeviceIds'])
+    ->name('user-notifications.getUserDeviceIds');
+    Route::post('admin/get-users-by-ids', [UserNotificationController::class, 'getUsersByIds'])
+    ->name('admin.getUsersByIds');
+
+  Route::get('user-notifications', [UserNotificationController::class, 'index'])->name('user-notifications.index');
+    Route::get('user-notifications/create', [UserNotificationController::class, 'create'])->name('user-notifications.create');
+    Route::post('user-notifications/save', [UserNotificationController::class, 'store'])->name('user-notifications.save');
+    Route::get('user-notifications/edit/{id}', [UserNotificationController::class, 'edit'])->name('user-notifications.edit');
+    Route::post('user-notifications/update/{id}', [UserNotificationController::class, 'update'])->name('user-notifications.update');
+    Route::get('user-notifications/show/{id}', [UserNotificationController::class, 'show'])->name('user-notifications.show');
+    Route::get('user-notifications/delete/{id}', [UserNotificationController::class, 'destroy'])->name('user-notifications.delete');
+    Route::get('user-notifications/change-status/{id}/{status}', [UserNotificationController::class, 'changeStatus'])->name('user-notifications.changeStatus');
+    Route::get('user-notifications/send-now/{id}', [UserNotificationController::class, 'sendNow'])->name('user-notifications.sendNow');
+    Route::get('user-notifications/get-user-device-id', [UserNotificationController::class, 'getUserDeviceId'])->name('user-notifications.getUserDeviceId');
         /*dashboard Route */
         Route::get('dashboard', [App\Http\Controllers\adminpnlx\AdminDashboardController::class, 'showdashboard'])->name('dashboard');
         Route::get('logout', [App\Http\Controllers\adminpnlx\LoginController::class, 'logout'])->name('logout');
@@ -38,9 +59,20 @@ Route::prefix('adminpnlx')->group(function () {
         Route::get('cms-manager/destroy/{encmsid?}', [App\Http\Controllers\adminpnlx\CmspagesController::class, 'destroy'])->name('cms-manager.delete');
         //  cms manager routes 
 
+        
+        Route::resource('faqs',FaqController::class);
+        
+        Route::get('faqs/destroy/{enfaqid?}', [FaqController::class, 'destroy'])->name('faqs.delete');
+        Route::get('festival-faq', [FaqController::class, 'festivalIndex'])->name('faqs.festivalIndex');
+  
+
         /* faq routes */
-        Route::resource('faqs', App\Http\Controllers\adminpnlx\FaqController::class);
-        Route::get('faqs/destroy/{enfaqid?}', [App\Http\Controllers\adminpnlx\FaqController::class, 'destroy'])->name('faqs.delete');
+
+Route::controller(FaqController::class)->group(function () {
+    Route::any('/festival-faqs/{festival_id?}', 'festivalFaqs')->name('festival-faqs');
+});
+
+        
         /* faq routes */
 
         /* Language setting start */
@@ -103,6 +135,31 @@ Route::prefix('adminpnlx')->group(function () {
         Route::get('designations/update-status/{id}/{status}', [App\Http\Controllers\adminpnlx\DesignationsController::class, 'changeStatus'])->name('designations.status');
         Route::get('designations/delete/{endesid}', [App\Http\Controllers\adminpnlx\DesignationsController::class, 'delete'])->name('designations.delete');
         /* Designations routes */
+
+        /* temple routes */
+        Route::match(['get', 'post'], '/temples', [App\Http\Controllers\adminpnlx\TempleController::class, 'index'])->name('temples.index');
+        Route::match(['get', 'post'], '/temples/create', [App\Http\Controllers\adminpnlx\TempleController::class, 'create'])->name('temples.create');
+        Route::post("/temples/save",[App\Http\Controllers\adminpnlx\TempleController::class, 'save'])->name('temples.save');
+        Route::match(['get', 'post'], '/temples/edit/{enuserid}', [App\Http\Controllers\adminpnlx\TempleController::class, 'edit'])->name('temples.edit');
+        Route::post("/temples/update/{enuserid}",[App\Http\Controllers\adminpnlx\TempleController::class, 'update'])->name('temples.update');
+        Route::get('temples/show/{enuserid}', [App\Http\Controllers\adminpnlx\TempleController::class, 'view'])->name('temples.show');
+        Route::get('temples/destroy/{enuserid?}', [App\Http\Controllers\adminpnlx\TempleController::class, 'destroy'])->name('temples.delete');
+       
+        
+           /*  festivals routes */
+        Route::match(['get', 'post'], '/festivals', [App\Http\Controllers\adminpnlx\FestivalController::class, 'index'])->name('festivals.index');
+        Route::match(['get', 'post'], '/festivals/create', [App\Http\Controllers\adminpnlx\FestivalController::class, 'create'])->name('festivals.create');
+        Route::post("/festivals/save",[App\Http\Controllers\adminpnlx\FestivalController::class, 'save'])->name('festivals.save');
+        Route::match(['get', 'post'], '/festivals/edit/{enuserid}', [App\Http\Controllers\adminpnlx\FestivalController::class, 'edit'])->name('festivals.edit');
+        Route::post("/festivals/update/{enuserid}",[App\Http\Controllers\adminpnlx\FestivalController::class, 'update'])->name('festivals.update');
+        Route::get('festivals/show/{enuserid}', [App\Http\Controllers\adminpnlx\FestivalController::class, 'view'])->name('festivals.show');
+        Route::get('festivals/destroy/{enuserid?}', [App\Http\Controllers\adminpnlx\FestivalController::class, 'destroy'])->name('festivals.delete');
+        Route::get('festivals/temples/{enuserid?}', [App\Http\Controllers\adminpnlx\FestivalController::class, 'festivalTemples'])->name('festivals.festivalTemples');
+        Route::get('festivals/faqs/{enuserid?}', [App\Http\Controllers\adminpnlx\FestivalController::class, 'festivalFaqs'])->name('festivals.festivalFaqs');
+        Route::get('festivals/temple-create/{enuserid?}', [App\Http\Controllers\adminpnlx\FestivalController::class, 'festivalTempleCreate'])->name('festivals.festivalTempleCreate');
+        Route::post('festivals/temple-save/{enuserid?}', [App\Http\Controllers\adminpnlx\FestivalController::class, 'festivalTempleSave'])->name('festivals.festivalTempleSave');
+         Route::get('festival-temple/destroy/{enuserid?}', [App\Http\Controllers\adminpnlx\FestivalController::class, 'festivalTempleDestroy'])->name('festivals.festivalTempleDestroy');
+        
 
     });
 });

@@ -79,13 +79,18 @@ class UsersController extends Controller
                     if ($fieldName == "is_active") {
                         $DB->where("users.is_active", 'like', '%' . $fieldValue . '%');
                     }
+                    if ($fieldName == "is_deleted") {
+                        $DB->where("users.is_deleted", 'like', '%' . $fieldValue . '%');
+                    }else{
+                        $DB->where("users.is_deleted", 0);
+                    }
                 }
                 $searchVariable	=	array_merge($searchVariable, array($fieldName => $fieldValue));
             }
         }
 
-        $DB->where("users.is_deleted", 0);
         $DB->where("users.user_role_id", 2);
+                $DB->where("users.is_deleted", 0);
         $sortBy = ($request->input('sortBy')) ? $request->input('sortBy') : 'users.created_at';
         $order  = ($request->input('order')) ? $request->input('order')   : 'DESC';
         $records_per_page	=	($request->input('per_page')) ? $request->input('per_page') : Config::get("Reading.records_per_page");

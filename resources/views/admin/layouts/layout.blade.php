@@ -8,27 +8,28 @@
     <title>{{{Config("Site.title")}}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    <link href="{{ asset('/css/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/themes/layout/header/base/light.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/themes/layout/header/menu/light.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/css/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/css/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/css/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/css/themes/layout/header/base/light.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/css/themes/layout/header/menu/light.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-    <link rel="stylesheet" href="{{ asset('/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('/public/css/style.css')}}">
     <link rel="shortcut icon" href="{{ asset('/img/favicon.ico')}}" />
-    <script src="{{ asset('/js/plugins.bundle.js')}}"></script>
-    <script src="{{ asset('/js/prismjs.bundle.js')}}"></script>
-    <script src="{{ asset('/js/scripts.bundle.js')}}"></script>
-    <script src="{{ asset('/js/sweetalert2.js')}}"></script>
+    <script src="{{ asset('/public/js/plugins.bundle.js')}}"></script>
+    <script src="{{ asset('/public/js/prismjs.bundle.js')}}"></script>
+    <script src="{{ asset('/public/js/scripts.bundle.js')}}"></script>
+    <script src="{{ asset('/public/js/sweetalert2.js')}}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
-    <link href="{{ asset('/js/intl-tel-input-master/build/css/intlTelInput.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/public/js/intl-tel-input-master/build/css/intlTelInput.css')}}" rel="stylesheet" type="text/css" />
   
-    <script src="{{ asset('/js/intl-tel-input-master/build/js/intlTelInput-jquery.min.js')}}"></script>
-	
+    <script src="{{ asset('/public/js/intl-tel-input-master/build/js/intlTelInput-jquery.min.js')}}"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 </head>
 <style>
@@ -38,7 +39,10 @@
     -moz-appearance: none;
     appearance: none; 
     }
+
+    
 </style>
+      @yield('style')
 
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
     <script type="text/javascript">
@@ -62,7 +66,7 @@
     </script>
     <div id="kt_header_mobile" class="header-mobile align-items-center  header-mobile-fixed ">
         <a href="{{route('adminpnlx')}}">
-            <img alt="Logo" src="{{asset('/img/logo-white.png')}}" />
+            <!--<img alt="Logo" src="{{asset('/public/img/logo-white.png')}}" />-->
         </a>
         <div class="d-flex align-items-center">
             <button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">
@@ -84,8 +88,8 @@
         <div class="d-flex flex-row flex-column-fluid page">
             <div class="aside aside-left  aside-fixed  d-flex flex-column flex-row-auto" id="kt_aside">
                 <div class="brand flex-column-auto " id="kt_brand">
-                    <a href="{{route('dashboard')}}" class="brand-logo w-100 justify-content-center">
-                        <img alt="Logo"  src="{{ asset('/img/logo-white.png')}}" />
+                    <a href="{{route('dashboard')}}" class="brand-logo w-100 justify-content-center" style="height:55px">
+                        <img alt="Logo"  src="{{ asset('/public/img/logo-white.png')}}" />
                     </a>
                     <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
                         <span class="svg-icon svg-icon svg-icon-xl">
@@ -369,6 +373,47 @@
             $("form").submit();
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+<script>
+$(document).ready(function() {
+    // Initialize Select2
+    $('.select2').select2({
+        width: '100%',
+        placeholder: 'Select states',
+        allowClear: true
+    });
+    
+    // Initialize tooltips
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'hover',
+        placement: 'top'
+    });
+    
+
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    // Initialize Select2
+    $('.select3').select2({
+        width: '100%',
+        placeholder: 'Select Users',
+        allowClear: true
+    });
+    
+    // Initialize tooltips
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'hover',
+        placement: 'top'
+    });
+    
+
+});
+</script>
+
       @yield('js')
 </body>
 

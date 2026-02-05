@@ -6,19 +6,19 @@
     <title>{{{Config("Site.title")}}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    <link href="{{ asset('/css/login.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('/css/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('/css/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('/css/themes/layout/header/base/light.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('/css/themes/layout/header/menu/light.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="{{asset('/img/favicon.ico')}}" />
-    <script src="{{asset('/js/plugins.bundle.js')}}"></script>
-    <script src="{{asset('/js/prismjs.bundle.js')}}"></script>
-    <script src="{{asset('/js/sweetalert2.js')}}"></script>
-    <script src="{{asset('/js/scripts.bundle.js')}}"></script>
+    <link href="{{ asset('/public/css/login.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/public/css/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/public/css/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/public/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/public/css/themes/layout/header/base/light.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/public/css/themes/layout/header/menu/light.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/public/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/public/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
+    <!--<link rel="shortcut icon" href="{{asset('/public/img/favicon.ico?sdsd')}}" />-->
+    <script src="{{asset('/public/js/plugins.bundle.js')}}"></script>
+    <script src="{{asset('/public/js/prismjs.bundle.js')}}"></script>
+    <script src="{{asset('/public/js/sweetalert2.js')}}"></script>
+    <script src="{{asset('/public/js/scripts.bundle.js')}}"></script>
 </head>
 
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">

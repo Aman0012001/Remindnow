@@ -25,6 +25,7 @@
         <div class="container">
             <form action="{{route($model.'.store')}}" method="post" class="mws-form" autocomplete="off" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="id" value="{{$festival_id}}" />
                 <div class="card card-custom gutter-b">
                     <div class="card-body">
                         <div class="row">
@@ -91,31 +92,30 @@
                                             <div class="col-xl-12">
                                                 <div class="form-group">
                                                     <div id="kt-ckeditor-1-toolbar{{$language->id}}"></div>
-                                                    @if($i == 1)
-                                                    <label>Answer </label><span class="text-danger"> * </span>
-                                                    <textarea id="body_{{$language->id}}" name="data[{{$language->id}}][answer]" class="form-control form-control-solid form-control-lg  @error('answer') is-invalid @enderror" value="{{old('answer')}}">
-                                                    {{old('answer')}} </textarea>
-                                                    @if ($errors->has('answer'))
-                                                    <div class="alert invalid-feedback admin_login_alert">
-                                                        {{ $errors->first('answer') }}
-                                                    </div>
-                                                    @endif
-                                                    @else
-                                                    <label>Answer </label>
-                                                    <textarea name="data[{{$language->id}}][answer]" id="body_{{$language->id}}" class="form-control form-control-solid form-control-lg">{{old('answer')}}</textarea>
-                                                    @endif
+@if($i == 1)
+<label>Answer </label><span class="text-danger"> * </span>
+<textarea id="body_{{$language->id}}" name="data[{{$language->id}}][answer]" class="form-control form-control-solid form-control-lg  @error('answer') is-invalid @enderror">{{old('answer')}}</textarea>
+@if ($errors->has('answer'))
+<div class="alert invalid-feedback admin_login_alert">
+    {{ $errors->first('answer') }}
+</div>
+@endif
+@else
+<label>Answer </label>
+<textarea name="data[{{$language->id}}][answer]" id="body_{{$language->id}}" class="form-control form-control-solid form-control-lg">{{old('answer')}}</textarea>
+@endif
                                                 </div>
                                                 <script src="{{asset('/js/ckeditor/ckeditor.js')}}"></script>
-                                                <script>
-                                                    CKEDITOR.replace(<?php echo 'body_' . $language->id; ?>, {
-                                                        filebrowserUploadUrl: '<?php echo URL()->to('base/uploder'); ?>',
-                                                        removeButtons:'New Page,Preview,Print,Templates,Cut,Copy,Paste,PasteText,PasteWord,Save,PasteFromWord,Undo,Redo,Find,Replace,SelectAll,Form,Checkbox,RadioButton,HiddenField,Strike,Subscript,Superscript,Language,Link,Unlink,Anchor,ShowBlocks',
-                                                        enterMode: CKEDITOR.ENTER_BR
-                                                    });
-                                                    CKEDITOR.config.allowedContent = true;
-                                                    CKEDITOR.config.removePlugins = 'scayt';
+                                                <!--<script>-->
+                                                <!--    CKEDITOR.replace(<?php echo 'body_' . $language->id; ?>, {-->
+                                                <!--        filebrowserUploadUrl: '<?php echo URL()->to('base/uploder'); ?>',-->
+                                                <!--        removeButtons:'New Page,Preview,Print,Templates,Cut,Copy,Paste,PasteText,PasteWord,Save,PasteFromWord,Undo,Redo,Find,Replace,SelectAll,Form,Checkbox,RadioButton,HiddenField,Strike,Subscript,Superscript,Language,Link,Unlink,Anchor,ShowBlocks',-->
+                                                <!--        enterMode: CKEDITOR.ENTER_BR-->
+                                                <!--    });-->
+                                                <!--    CKEDITOR.config.allowedContent = true;-->
+                                                <!--    CKEDITOR.config.removePlugins = 'scayt';-->
                                                   
-                                                </script>
+                                                <!--</script>-->
                                             </div>
                                         </div>
                                     </div>

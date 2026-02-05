@@ -1,0 +1,649 @@
+
+
+Request:
+{"message":{"notification":{"title":"Test Title","body":"This is a test push"},"token":"f31_5AXBTHiKD_imBOnUAN:APA91bHOo02hYVjb6WN4vcG6nJ_s4OHaN3PiqEmH2T6YwMnZDCltpIkObCPltlTpOMI490xTVXsj7DoN33vkTeOoGCiX0hCPh2uK1C3E5Q1IU1pJF2XTjjQ","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"Test Title","body":"This is a test push"},"token":"dpw0F2QUQB6JPgPS7orkZA:APA91bH889rx0m5fCgCVFtQPri2bcdsl7mDzMkl65V7bSXzA2KmenPX6oxhhGg8quuD1RYy91qdOiUJTzA-DD4mNpXWxeaUPjp_lTcozEzx4k4hODyHj0gk","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766127391286037%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"abhihek","body":"dbqjhdqhjd"},"token":"\"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8\"","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 400,
+    "message": "The registration token is not a valid FCM registration token",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "INVALID_ARGUMENT"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"abhihek","body":"dbqjhdqhjd"},"token":"\"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8\"","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 400,
+    "message": "The registration token is not a valid FCM registration token",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "INVALID_ARGUMENT"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"abhihek","body":"dbqjhdqhjd"},"token":"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8\"","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 404,
+    "message": "NotRegistered",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"abhihek","body":"dbqjhdqhjd"},"token":"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766169482030150%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hu","body":"k"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766478454834081%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hu","body":"k"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766478470594231%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hello","body":"test"},"token":"\"c3aikjAERWOICldCYXh51i:APA91bFbpxz0dHeMBPYg6uuflVcAx86934vQIjBX6PhPDgnLrAuMw0FjPKGKFPGYMmY37F7PLTBBRzI21tOqyAbHFq5EsjLgEOcJEzQEEnbbotHglB3914w\"","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 400,
+    "message": "The registration token is not a valid FCM registration token",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "INVALID_ARGUMENT"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hello","body":"test"},"token":"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766510485673487%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hello","body":"test"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766510485932306%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hello","body":"test"},"token":"\"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4\"","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 400,
+    "message": "The registration token is not a valid FCM registration token",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "INVALID_ARGUMENT"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hello","body":"test"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766510486523750%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hello","body":"test"},"token":"dq8Px9V9TRWnGSkA47DwWo:APA91bEaFgfg9PKbkLkQtpJe_8ASlPexyuS3L2WXkSaVO-cUBB1tnFhQoYAAIpZ5cxjwsxKAtC_0_M63HzrrpOkdDYi6hFCTTR2D9MUz19IRku_KZZrS2CE","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766510486801104%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"uuu","body":"test"},"token":"\"c3aikjAERWOICldCYXh51i:APA91bFbpxz0dHeMBPYg6uuflVcAx86934vQIjBX6PhPDgnLrAuMw0FjPKGKFPGYMmY37F7PLTBBRzI21tOqyAbHFq5EsjLgEOcJEzQEEnbbotHglB3914w\"","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 400,
+    "message": "The registration token is not a valid FCM registration token",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "INVALID_ARGUMENT"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"uuu","body":"test"},"token":"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766510565578263%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"uuu","body":"test"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766510565884612%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"uuu","body":"test"},"token":"\"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4\"","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 400,
+    "message": "The registration token is not a valid FCM registration token",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "INVALID_ARGUMENT"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"uuu","body":"test"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766510566386798%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"uuu","body":"test"},"token":"dq8Px9V9TRWnGSkA47DwWo:APA91bEaFgfg9PKbkLkQtpJe_8ASlPexyuS3L2WXkSaVO-cUBB1tnFhQoYAAIpZ5cxjwsxKAtC_0_M63HzrrpOkdDYi6hFCTTR2D9MUz19IRku_KZZrS2CE","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766510566618550%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"c3aikjAERWOICldCYXh51i:APA91bFbpxz0dHeMBPYg6uuflVcAx86934vQIjBX6PhPDgnLrAuMw0FjPKGKFPGYMmY37F7PLTBBRzI21tOqyAbHFq5EsjLgEOcJEzQEEnbbotHglB3914w","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511092979110%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511093281694%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511093543219%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511093830800%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511094129985%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"dq8Px9V9TRWnGSkA47DwWo:APA91bEaFgfg9PKbkLkQtpJe_8ASlPexyuS3L2WXkSaVO-cUBB1tnFhQoYAAIpZ5cxjwsxKAtC_0_M63HzrrpOkdDYi6hFCTTR2D9MUz19IRku_KZZrS2CE","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511094371318%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"c3aikjAERWOICldCYXh51i:APA91bFbpxz0dHeMBPYg6uuflVcAx86934vQIjBX6PhPDgnLrAuMw0FjPKGKFPGYMmY37F7PLTBBRzI21tOqyAbHFq5EsjLgEOcJEzQEEnbbotHglB3914w","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511111364338%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511111599555%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511111885767%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511112161929%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511112439383%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"test","body":"test"},"token":"dq8Px9V9TRWnGSkA47DwWo:APA91bEaFgfg9PKbkLkQtpJe_8ASlPexyuS3L2WXkSaVO-cUBB1tnFhQoYAAIpZ5cxjwsxKAtC_0_M63HzrrpOkdDYi6hFCTTR2D9MUz19IRku_KZZrS2CE","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511112716310%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"second","body":"test"},"token":"c3aikjAERWOICldCYXh51i:APA91bFbpxz0dHeMBPYg6uuflVcAx86934vQIjBX6PhPDgnLrAuMw0FjPKGKFPGYMmY37F7PLTBBRzI21tOqyAbHFq5EsjLgEOcJEzQEEnbbotHglB3914w","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511139622560%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"second","body":"test"},"token":"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511139935995%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"second","body":"test"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511140197630%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"second","body":"test"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511140480203%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"second","body":"test"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511140807007%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"second","body":"test"},"token":"dq8Px9V9TRWnGSkA47DwWo:APA91bEaFgfg9PKbkLkQtpJe_8ASlPexyuS3L2WXkSaVO-cUBB1tnFhQoYAAIpZ5cxjwsxKAtC_0_M63HzrrpOkdDYi6hFCTTR2D9MUz19IRku_KZZrS2CE","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511141044429%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"c3aikjAERWOICldCYXh51i:APA91bFbpxz0dHeMBPYg6uuflVcAx86934vQIjBX6PhPDgnLrAuMw0FjPKGKFPGYMmY37F7PLTBBRzI21tOqyAbHFq5EsjLgEOcJEzQEEnbbotHglB3914w","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511903607979%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"enmwGd-iS-KjsaKFeVjtBx:APA91bEuJLAshiNMggD3KzHkp7lKfjRBL5wIYQKuzhc__A63ZqjwwCDsdIc738-M5gBQUG5mvzntnA96Q_yZiD--adb9eFNseqF2LGPnGuoMmAFTb3fIAu8","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511903879812%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511904173429%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"d6vXPCBMTGyCtb3DboTYBA:APA91bFscNGFZljuYZSJDRByIVMmSIDR0dNnIWJ7RUHbhFh1fVqk8b8No3k5A64YZAkdn0ZpUOZmmL6SK0UKErvi7luO_Yt8B9zHT8iQdUj_SxIFcUPfQY4","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"dq8Px9V9TRWnGSkA47DwWo:APA91bEaFgfg9PKbkLkQtpJe_8ASlPexyuS3L2WXkSaVO-cUBB1tnFhQoYAAIpZ5cxjwsxKAtC_0_M63HzrrpOkdDYi6hFCTTR2D9MUz19IRku_KZZrS2CE","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511905050762%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"dpw0F2QUQB6JPgPS7orkZA:APA91bH889rx0m5fCgCVFtQPri2bcdsl7mDzMkl65V7bSXzA2KmenPX6oxhhGg8quuD1RYy91qdOiUJTzA-DD4mNpXWxeaUPjp_lTcozEzx4k4hODyHj0gk","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"cXYYAJMsQTOJkfPOU6TsVb:APA91bEUVvQ4wG8AQGv16QEmYdTFe2k1swUVsRfv76OqdzlJ_bvQsIM86Q-TQq0LMW8SIEhPs5SGQrEeiP9jSRyPDkZheThwWtSfWZGwfUeaA5TK3zcAyKU","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511905561025%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"suus","body":"jsk"},"token":"ct_dz0T5RGqBRig5Y9Qe1z:APA91bGYZqmf3Mo3hE313lN2TogVe1JxgYLJNDF-BnwE-IMHqAvQbKassw4jJQ6aHP25NLrjFmyRVpqvXwcFdXuoth1ZNwo7pbUhVFQSE6z3M3fTnWp3lQM","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766511905843224%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hi teesha","body":"kaise ho"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766754383372591%3a53a1743a53a174"
+}
+
+
+
+
+Request:
+{"message":{"notification":{"title":"hi teesha","body":"kaise ho"},"token":"eWnAUNyuSpyuEske-Aq766:APA91bG2IajfIRciclkSmWLYlHjrHPpRm7OsT4woXZ37yUb1XWUXq0mDuEn7mB6HTB14EqyyrkCKAZBbgTys3jCs8phcAXnGXwOsEVevGWEm_y5-tRpWFbY","data":{"extra":"data","type":"test_notification"}}}
+
+Response:
+{
+  "name": "projects/remyndnow/messages/0:1766754397519953%3a53a1743a53a174"
+}
+
+

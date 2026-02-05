@@ -106,15 +106,15 @@
                                                     @endif
                                                 </div>
                                                 <script src="{{asset('/js/ckeditor/ckeditor.js')}}"></script>
-                                                <script>
-                                                    CKEDITOR.replace(<?php echo 'body_' . $language->id; ?>, {
-                                                        filebrowserUploadUrl: '<?php echo URL()->to('base/uploder'); ?>',
-                                                        removeButtons:'New Page,Preview,Print,Templates,Cut,Copy,Paste,PasteText,PasteWord,Save,PasteFromWord,Undo,Redo,Find,Replace,SelectAll,Form,Checkbox,RadioButton,HiddenField,Strike,Subscript,Superscript,Language,Link,Unlink,Anchor,ShowBlocks',
-                                                        enterMode: CKEDITOR.ENTER_BR
-                                                    });
-                                                    CKEDITOR.config.allowedContent = true;
-                                                    CKEDITOR.config.removePlugins = 'scayt';
-                                                </script>
+                                                <!--<script>-->
+                                                <!--    CKEDITOR.replace(<?php echo 'body_' . $language->id; ?>, {-->
+                                                <!--        filebrowserUploadUrl: '<?php echo URL()->to('base/uploder'); ?>',-->
+                                                <!--        removeButtons:'New Page,Preview,Print,Templates,Cut,Copy,Paste,PasteText,PasteWord,Save,PasteFromWord,Undo,Redo,Find,Replace,SelectAll,Form,Checkbox,RadioButton,HiddenField,Strike,Subscript,Superscript,Language,Link,Unlink,Anchor,ShowBlocks',-->
+                                                <!--        enterMode: CKEDITOR.ENTER_BR-->
+                                                <!--    });-->
+                                                <!--    CKEDITOR.config.allowedContent = true;-->
+                                                <!--    CKEDITOR.config.removePlugins = 'scayt';-->
+                                                <!--</script>-->
                                             </div>
                                         </div>
                                     </div>

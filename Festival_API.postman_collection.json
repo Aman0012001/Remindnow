@@ -1,0 +1,590 @@
+{
+    "info": {
+        "_postman_id": "festival-api-2026",
+        "name": "Festival API - Google Calendar & Push Notifications",
+        "description": "Complete API collection for Festival Management with Google Calendar Integration and Push Notifications",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Festival Management",
+            "item": [
+                {
+                    "name": "Get All Festivals",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/festivals/all?month=3&year=2026&per_page=15",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "all"
+                            ],
+                            "query": [
+                                {
+                                    "key": "month",
+                                    "value": "3",
+                                    "description": "Filter by month (1-12)"
+                                },
+                                {
+                                    "key": "year",
+                                    "value": "2026",
+                                    "description": "Filter by year"
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "15",
+                                    "description": "Results per page"
+                                },
+                                {
+                                    "key": "start_date",
+                                    "value": "2026-01-01",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2026-12-31",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "state",
+                                    "value": "Maharashtra",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "search",
+                                    "value": "Holi",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Upcoming Festivals",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/festivals/upcoming?limit=10",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "upcoming"
+                            ],
+                            "query": [
+                                {
+                                    "key": "limit",
+                                    "value": "10",
+                                    "description": "Number of festivals to return"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Festival Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/festivals/{{festival_id}}",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "{{festival_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Google Calendar Integration",
+            "item": [
+                {
+                    "name": "Get Google Auth URL",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/google/auth-url",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "google",
+                                "auth-url"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Handle Google OAuth Callback",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"code\": \"4/0AY0e-g7xxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/google/callback",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "google",
+                                "callback"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Check Google Connection Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/google/status",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "google",
+                                "status"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Refresh Google Access Token",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/google/refresh-token",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "google",
+                                "refresh-token"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Disconnect Google Calendar",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/google/disconnect",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "google",
+                                "disconnect"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Sync Festival to Google Calendar",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"festival_id\": {{festival_id}},\n    \"google_access_token\": \"{{google_token}}\",\n    \"calendar_id\": \"primary\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/festivals/sync-to-calendar",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "sync-to-calendar"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Sync Multiple Festivals (Bulk)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"festival_ids\": [1, 2, 3, 4, 5],\n    \"google_access_token\": \"{{google_token}}\",\n    \"calendar_id\": \"primary\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/festivals/sync-multiple",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "sync-multiple"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove Festival from Google Calendar",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"festival_id\": {{festival_id}},\n    \"google_access_token\": \"{{google_token}}\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/festivals/remove-from-calendar",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "remove-from-calendar"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Synced Festivals",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/festivals/synced/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "synced",
+                                "list"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Push Notifications",
+            "item": [
+                {
+                    "name": "Send Festival Notification (All Users)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"festival_id\": {{festival_id}},\n    \"title\": \"🎉 Holi Tomorrow!\",\n    \"message\": \"Get ready to celebrate the festival of colors!\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/festivals/send-notification",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "send-notification"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Send Festival Notification (Specific Users)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"festival_id\": {{festival_id}},\n    \"title\": \"🎉 Holi Reminder\",\n    \"message\": \"Don't forget to celebrate Holi tomorrow!\",\n    \"user_ids\": [1, 2, 3, 4, 5]\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/festivals/send-notification",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "send-notification"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Schedule Festival Notification",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"festival_id\": {{festival_id}},\n    \"scheduled_at\": \"2026-03-13 18:00:00\",\n    \"title\": \"Reminder: Holi Tomorrow\",\n    \"message\": \"Don't forget to celebrate Holi tomorrow at 10 AM!\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/festivals/schedule-notification",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "festivals",
+                                "schedule-notification"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "https://admin.drajaysaini.in/api",
+            "type": "string"
+        },
+        {
+            "key": "token",
+            "value": "your_bearer_token_here",
+            "type": "string"
+        },
+        {
+            "key": "google_token",
+            "value": "your_google_access_token",
+            "type": "string"
+        },
+        {
+            "key": "festival_id",
+            "value": "1",
+            "type": "string"
+        }
+    ]
+}

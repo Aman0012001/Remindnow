@@ -254,6 +254,12 @@ function image_size_Get($value='')
   return number_format(File::size($value)/1024,2);
 }
 
+function currentLangId()
+{
+    
+    return DB::table('languages')->where('lang_code',request()->header('Accept-Language'))->value('id');
+}
+
 
 function end_date_time_get($value){
   $create_time = strtotime($value);

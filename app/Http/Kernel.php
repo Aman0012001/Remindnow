@@ -53,6 +53,12 @@ class Kernel extends HttpKernel
         'UsersFront' => [
             \App\Http\Middleware\UsersFront::class,
         ], 
+        'GuestApi' => [
+            \App\Http\Middleware\GuestApi::class,
+        ], 
+        'AuthApi' => [
+            \App\Http\Middleware\AuthApi::class,
+        ], 
 
     ];
 
